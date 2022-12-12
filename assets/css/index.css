@@ -1,0 +1,374 @@
+/* Import gg font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+/* Varilables */
+/* :root {
+} */
+
+/* Base css */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* CSS */
+header {
+  width: 100%;
+  padding: 0 15px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+}
+
+.home-icon {
+  padding-right: 12px;
+  font-size: 50px;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  width: 780px;
+  height: 52px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.nav-search:hover {
+  opacity: 1;
+}
+
+.nav-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.nav-search-icon {
+  font-size: 28px;
+  padding: 0 8px;
+  opacity: 0.6;
+}
+
+.links {
+  text-decoration: none;
+  color: black;
+  padding: 0 15px 25px 15px;
+  font-weight: 400;
+}
+
+.links:hover {
+  position: relative;
+  color: black;
+  opacity: 0.5;
+}
+
+.nav-icon {
+  font-size: 30px;
+  padding: 30px 15px;
+}
+
+.nav-icon:hover > i {
+  opacity: 0.6;
+}
+
+.nav-icon:hover .home-title {
+  font-weight: 600;
+}
+
+.explore-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  left: -20px;
+  margin-top: 20px;
+}
+
+.dropdown-item {
+  z-index: 3;
+  position: relative;
+  padding: 12px 16px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.dropdown-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  width: 100%;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-links {
+  position: relative;
+  display: flex;
+}
+
+.explore:hover .explore-dropdown {
+  display: flex;
+}
+
+.stats:hover .stats-dropdown {
+  display: flex;
+}
+
+.stats-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  right: 95px;
+  margin-top: 20px;
+}
+
+.resources-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  right: -20px;
+  margin-top: 20px;
+}
+
+.resources:hover .resources-dropdown {
+  display: flex;
+}
+
+.nav_items {
+  position: relative;
+}
+
+.user-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 99999;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  left: -15px;
+  margin-top: 9px;
+}
+
+.user-dropdown .dropdown-item {
+  padding: 2px 16px;
+}
+
+.user-dropdown .dropdown-item a {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.user:hover .user-dropdown {
+  display: flex;
+}
+
+.user-dropdown .dropdown-item i {
+  font-size: 20px;
+}
+
+/* Button switch darkmode */
+.item-nightmode input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.item-nightmode label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 70px;
+  height: 26px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.item-nightmode label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 17px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.item-nightmode input:checked + label {
+  background: rgba(46, 127, 232, 0.851);
+}
+
+.item-nightmode input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.item-nightmode label:active:after {
+  width: 44px;
+}
+
+.item-nightmode {
+  padding: 9px 16px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-nightmode a {
+  padding-left: 8px;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-title {
+  text-align: center;
+  width: 60%;
+  padding-top: 55px;
+  font-size: 50px;
+  color: rgb(103, 103, 103);
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
