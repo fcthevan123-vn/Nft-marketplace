@@ -8,36 +8,19 @@ const cryptoPunk = "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB";
 const bayc = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
 const cloneX = "0x49cF6f5d44E70224e2E23fDcdd2C053F30aDA28B";
 
-let dataNFT = {
-  //   cryptoPunk: {},
-  //   bayc: {},
-  //   clonex: {},
-};
-
-let test = {
-  cryptoPunk: {
-    key: {
-      siu: {
-        l: "ok",
-      },
-    },
-  },
-  bayc: {},
-  clonex: {},
-};
-console.log(test);
-console.log(addressNFT);
+let dataNFT = {};
 
 function nftList(info, contract) {
-  console.log(info.contract);
-  if (contract == cryptoPunk) {
-    dataNFT.cryptoPunk = { ...info };
-  }
-  if (contract == cloneX) {
-    dataNFT.clonex = { ...info };
-  }
-  if (contract == bayc) {
-    dataNFT.bayc = { ...info };
+  switch (contract) {
+    case cryptoPunk:
+      dataNFT.cryptoPunk = { ...info };
+      break;
+    case bayc:
+      dataNFT.bayc = { ...info };
+      break;
+    case cloneX:
+      dataNFT.clonex = { ...info };
+      break;
   }
 }
 
@@ -60,7 +43,6 @@ const renderItem = () => {
     getNFT(item);
   });
   console.log(dataNFT);
-  console.log(JSON.stringify(dataNFT));
 };
 
 const getItem = () => {
