@@ -430,6 +430,7 @@ header {
 }
 
 .card-item {
+  height: 407px;
   width: 300px;
   background-color: rgba(212, 211, 211, 0.599);
   border-radius: 8px;
@@ -437,6 +438,10 @@ header {
   margin: 5px 0;
   position: relative;
   cursor: pointer;
+}
+
+.card-item:first-child {
+  display: none;
 }
 
 .img-item {
